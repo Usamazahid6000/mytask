@@ -27,7 +27,10 @@ const Crud = () => {
   };
 
   const DeleteRecord = (item) => {
-    dispatch(DeleteUser(item));
+    let filterData = GetAllDataFromRedux?.filter((data, index) => {
+      return data !== item;
+    });
+    dispatch(DeleteUser(filterData));
   };
 
   const onEditClick = (index) => {
